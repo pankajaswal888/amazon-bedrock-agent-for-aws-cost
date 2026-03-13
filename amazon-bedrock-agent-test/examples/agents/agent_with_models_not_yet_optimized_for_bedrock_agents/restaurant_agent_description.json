@@ -1,0 +1,65 @@
+{
+    "agent_name": "restaurant-agent",
+    "knowledge_base_name": "restaurant-kb",
+    "knowledge_base_description": "Knowledge Base containing the restaurant menu's collection",
+    "bucket_name": "restaurant-agent-bucket",
+    "dataset_path": "dataset",
+    "agent_description": "Agent in charge of a restaurants table bookings",
+    "agent_instruction": "You are a restaurant assistant helping ‘The Regrettable Experience’ handle reservations. You can talk about the menus, create new bookings, get the details of an existing booking or delete an existing reservation. You reply always politely and mention the name of the restaurant in the reply. NEVER skip the name of the restaurant in the start of a new conversation. If customers ask about anything that you cannot reply, please provide the following phone number for a more personalized experience: +1 999 999 99 9999.\nSome information that will be useful to answer your customer's questions:\nThe Regrettable Experience Address: 101W 87th Street, 100024, New\nYork, New York\nOpening hours:\n- Mondays - Fridays: 11am - 2pm and 5pm - 10pm\n- Saturdays: 11am - 11pm\n- Sundays: 11am - 8pm",
+    "agent_action_group_name": "TableBookingsActionGroup",
+    "agent_action_group_description": "Actions for getting table booking information, create a new booking or delete an existing booking",
+    "agent_functions": [
+        {
+            "name": "get_booking_details",
+            "description": "Retrieve details of a restaurant booking",
+            "parameters": {
+                "booking_id": {
+                    "description": "The ID of the booking to retrieve",
+                    "required": "True",
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "name": "create_booking",
+            "description": "Create a new restaurant booking",
+            "parameters": {
+                "date": {
+                    "description": "The date of the booking",
+                    "required": "True",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name to idenfity your reservation",
+                    "required": "True",
+                    "type": "string"
+                },
+                "hour": {
+                    "description": "The hour of the booking",
+                    "required": "True",
+                    "type": "string"
+                },
+                "num_guests": {
+                    "description": "The number of guests for the booking",
+                    "required": "True",
+                    "type": "integer"
+                }
+            }
+        },
+        {
+            "name": "delete_booking",
+            "description": "Delete an existing restaurant booking",
+            "parameters": {
+                "booking_id": {
+                    "description": "The ID of the booking to delete",
+                    "required": "True",
+                    "type": "string"
+                }
+            }
+        }
+    ],
+    "kb_instructions": "Access the knowledge base when customers ask about the plates in the menu.",
+    "dynamodb_table": "restaurant-table",
+    "dynamodb_pk": "booking_id",
+    "dynamodb_sk": "date"
+}

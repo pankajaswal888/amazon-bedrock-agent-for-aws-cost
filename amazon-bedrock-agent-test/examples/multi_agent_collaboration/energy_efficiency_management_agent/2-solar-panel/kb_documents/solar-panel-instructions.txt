@@ -1,0 +1,40 @@
+Sunpower X:
+This solar panel model is designed for residential use and features a high-efficiency monocrystalline solar cells, providing a power output of up to 350 watts. It has a sleek, low-profile design and is built to withstand harsh weather conditions.
+
+Sunpower Y:
+The Sunpower Y model is a versatile solar panel suitable for both residential and small-scale commercial applications. It boasts a power output of up to 400 watts and utilizes high-efficiency polycrystalline solar cells. This model is known for its durability and reliable performance.
+
+Sunpower Double-X:
+The Sunpower Double-X is a premium solar panel model designed for larger residential or small commercial installations. It features a power output of up to 450 watts and employs the latest in solar cell technology, ensuring maximum energy conversion efficiency. This model is built to withstand extreme weather conditions and has a sleek, modern appearance.
+
+Installation Instructions:
+
+Sunpower X:
+1. Assess the installation site and ensure it meets the necessary requirements, such as adequate sun exposure and structural integrity.
+2. Obtain the necessary permits and approvals from local authorities to ensure compliance with energy regulations.
+3. Prepare the installation area by clearing any obstructions and ensuring a stable mounting surface.
+4. Install the mounting system according to the manufacturer's instructions, ensuring proper alignment and secure attachment.
+5. Carefully lift and position the Sunpower X solar panel onto the mounting system, making the necessary electrical connections.
+6. Verify the panel's orientation and tilt angle to maximize energy production.
+7. Connect the solar panel to the home's electrical system, following all safety protocols and local electrical codes.
+8. Test the system's functionality and monitor its performance to ensure optimal energy generation.
+
+Sunpower Y:
+1. Evaluate the installation site and confirm it meets the required criteria, such as sufficient sun exposure and structural suitability.
+2. Obtain the necessary permits and approvals from local authorities to ensure compliance with energy regulations.
+3. Prepare the installation area by clearing any obstacles and ensuring a stable mounting surface.
+4. Install the mounting system according to the manufacturer's instructions, ensuring proper alignment and secure attachment.
+5. Carefully lift and position the Sunpower Y solar panel onto the mounting system, making the necessary electrical connections.
+6. Adjust the panel's orientation and tilt angle to optimize energy production.
+7. Connect the solar panel to the home's electrical system, following all safety protocols and local electrical codes.
+8. Test the system's functionality and monitor its performance to ensure optimal energy generation.
+
+Sunpower Double-X:
+1. Assess the installation site and confirm it meets the necessary requirements, such as adequate sun exposure and structural suitability.
+2. Obtain the required permits and approvals from local authorities to ensure compliance with energy regulations.
+3. Prepare the installation area by clearing any obstructions and ensuring a stable mounting surface.
+4. Install the mounting system according to the manufacturer's instructions, ensuring proper alignment and secure attachment.
+5. Carefully lift and position the Sunpower Double-X solar panel onto the mounting system, making the necessary electrical connections.
+6. Adjust the panel's orientation and tilt angle to maximize energy production.
+7. Connect the solar panel to the home's electrical system, following all safety protocols and local electrical codes.
+8. Test the system's functionality and monitor its performance to ensure optimal energy generation.

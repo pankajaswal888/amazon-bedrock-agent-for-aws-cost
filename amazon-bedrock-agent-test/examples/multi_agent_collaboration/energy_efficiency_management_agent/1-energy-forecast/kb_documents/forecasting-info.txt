@@ -1,0 +1,104 @@
+Step-by-Step Forecast Process for Time-Series Data using Python and Scikit-learn
+
+1. Import necessary libraries:
+```python
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+```
+
+2. Load and preprocess the data:
+```python
+# Load data from JSON file
+df = pd.read_json('data.json', lines=True)
+
+# Convert 'day' to datetime
+df['day'] = pd.to_datetime(df['day'])
+
+# Set 'day' as index
+df.set_index('day', inplace=True)
+
+# Sort by date
+df.sort_index(inplace=True)
+
+# Create lag features
+for i in range(1, 8):
+    df[f'lag_{i}'] = df['sumPowerReading'].shift(i)
+
+# Drop rows with NaN values
+df.dropna(inplace=True)
+```
+
+3. Prepare features and target:
+```python
+X = df[['lag_1', 'lag_2', 'lag_3', 'lag_4', 'lag_5', 'lag_6', 'lag_7']]
+y = df['sumPowerReading']
+
+# Split data into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
+
+# Scale features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+```
+
+4. Train the Random Forest model:
+```python
+rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_model.fit(X_train_scaled, y_train)
+```
+
+5. Make predictions:
+```python
+y_pred = rf_model.predict(X_test_scaled)
+```
+
+6. Evaluate the model:
+```python
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+print(f"Root Mean Squared Error: {rmse}")
+```
+
+7. Visualize the results:
+```python
+plt.figure(figsize=(12, 6))
+plt.plot(y_test.index, y_test.values, label='Actual')
+plt.plot(y_test.index, y_pred, label='Predicted')
+plt.title('Random Forest Forecast')
+plt.xlabel('Date')
+plt.ylabel('Power Reading')
+plt.legend()
+plt.show()
+```
+
+8. Analyze feature importance:
+```python
+feature_importance = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf_model.feature_importances_
+}).sort_values('importance', ascending=False)
+
+print(feature_importance)
+```
+
+Understanding the forecasted values:
+1. Compare the predicted values with actual values using the visualization.
+2. Analyze the RMSE to understand the average prediction error.
+3. Look for patterns or trends in the forecast, such as seasonality or cyclical behavior.
+
+Factors driving the forecasted values:
+1. Examine the feature importance output to identify which lag features have the most significant impact on the predictions.
+2. The most important features (lag values) indicate the time periods that have the strongest influence on future power readings.
+3. Consider external factors not included in the model, such as weather patterns, holidays, or economic conditions, which might explain deviations between predicted and actual values.
+
+To improve the forecast:
+1. Incorporate additional relevant features, such as weather data or day-of-week indicators.
+2. Experiment with different algorithms, such as ARIMA, Prophet, or LSTM neural networks.
+3. Fine-tune model hyperparameters using techniques like grid search or random search.
+4. Increase the historical data used for training to capture long-term patterns better.

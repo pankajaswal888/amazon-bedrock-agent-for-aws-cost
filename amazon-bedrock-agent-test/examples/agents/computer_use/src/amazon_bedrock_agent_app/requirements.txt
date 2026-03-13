@@ -1,0 +1,7 @@
+streamlit>=1.38.0
+jsonschema==4.22.0
+boto3
+aiohttp
+pydantic
+anthropic[bedrock,vertex]>=0.37.1
+awscli

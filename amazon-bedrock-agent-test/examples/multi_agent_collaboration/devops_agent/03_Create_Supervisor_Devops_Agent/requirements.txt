@@ -1,0 +1,4 @@
+opensearch-py
+retrying
+boto3
+botocore
